@@ -1,0 +1,260 @@
+---
+// Header component with sticky navigation and CTA
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="/" class="logo">
+          <span class="logo-text">Pasco Painters</span>
+          <span class="logo-tagline">Professional Painting Services</span>
+        </a>
+      </div>
+      
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="/services" class="nav-link">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="/services/residential-painting">Residential Painting</a></li>
+              <li><a href="/services/commercial-painting">Commercial Painting</a></li>
+              <li><a href="/services/interior-painting">Interior Painting</a></li>
+              <li><a href="/services/exterior-painting">Exterior Painting</a></li>
+              <li><a href="/services/cabinet-refinishing">Cabinet Refinishing</a></li>
+              <li><a href="/services/pressure-washing">Pressure Washing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="/areas" class="nav-link">Service Areas</a>
+            <ul class="dropdown-menu">
+              <li><a href="/areas/new-port-richey">New Port Richey</a></li>
+              <li><a href="/areas/wesley-chapel">Wesley Chapel</a></li>
+              <li><a href="/areas/zephyrhills">Zephyrhills</a></li>
+              <li><a href="/areas/land-o-lakes">Land O' Lakes</a></li>
+              <li><a href="/areas/dade-city">Dade City</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/blog" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="nav-cta">
+        <a href="tel:+1-727-555-0123" class="phone-link">(727) 555-0123</a>
+        <a href="/contact" class="btn-primary">Get Free Quote</a>
+      </div>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  
+  .nav-brand {
+    flex-shrink: 0;
+  }
+  
+  .logo {
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+  
+  .logo-tagline {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 400;
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+  }
+  
+  .nav-item {
+    position: relative;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary);
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    list-style: none;
+    padding: 0.5rem 0;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .dropdown-menu a:hover {
+    background: var(--surface);
+    color: var(--primary);
+  }
+  
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .phone-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text);
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--border);
+      padding: 1rem;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .nav-menu.active {
+      transform: translateY(0);
+    }
+    
+    .nav-list {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      padding-left: 1rem;
+    }
+    
+    .nav-cta {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .nav-toggle {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // Mobile navigation toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  
+  navToggle?.addEventListener('click', () => {
+    navMenu?.classList.toggle('active');
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle?.contains(e.target as Node) && !navMenu?.contains(e.target as Node)) {
+      navMenu?.classList.remove('active');
+    }
+  });
+</script>

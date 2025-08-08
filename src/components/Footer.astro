@@ -1,0 +1,212 @@
+---
+// Footer component with contact info, services, and business details
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">Pasco Painters</h3>
+        <p class="footer-description">
+          Professional painting services throughout Pasco County, Florida. 
+          Quality workmanship, competitive pricing, and exceptional customer service.
+        </p>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:+1-727-555-0123" class="contact-link">(727) 555-0123</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <a href="mailto:info@pascopainters.com" class="contact-link">info@pascopainters.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>New Port Richey, FL 34652</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Services</h4>
+        <ul class="footer-links">
+          <li><a href="/services/residential-painting">Residential Painting</a></li>
+          <li><a href="/services/commercial-painting">Commercial Painting</a></li>
+          <li><a href="/services/interior-painting">Interior Painting</a></li>
+          <li><a href="/services/exterior-painting">Exterior Painting</a></li>
+          <li><a href="/services/cabinet-refinishing">Cabinet Refinishing</a></li>
+          <li><a href="/services/pressure-washing">Pressure Washing</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Service Areas</h4>
+        <ul class="footer-links">
+          <li><a href="/areas/new-port-richey">New Port Richey</a></li>
+          <li><a href="/areas/wesley-chapel">Wesley Chapel</a></li>
+          <li><a href="/areas/zephyrhills">Zephyrhills</a></li>
+          <li><a href="/areas/land-o-lakes">Land O' Lakes</a></li>
+          <li><a href="/areas/dade-city">Dade City</a></li>
+          <li><a href="/areas">All Service Areas</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/quote">Get Free Quote</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <p>&copy; 2024 Pasco Painters. All rights reserved.</p>
+        <p>Licensed & Insured • Free Estimates • Quality Guaranteed</p>
+      </div>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--text);
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+  }
+  
+  .footer-description {
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-icon {
+    font-size: 1.1rem;
+  }
+  
+  .contact-link {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .contact-link:hover {
+    color: var(--secondary);
+  }
+  
+  .footer-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .footer-links a:hover {
+    color: var(--secondary);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .footer-info p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .footer-info p:first-child {
+    margin-bottom: 0.25rem;
+  }
+  
+  .footer-legal {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .footer-legal a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  
+  .footer-legal a:hover {
+    color: var(--secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-legal {
+      justify-content: center;
+    }
+  }
+</style>

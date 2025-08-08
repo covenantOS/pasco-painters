@@ -1,16 +1,521 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
 
+// SEO-optimized content for Pasco County painting services
+const title = "Pasco Painters - Professional Painting Services in Pasco County, FL";
+const description = "Transform your home with professional painting services in Pasco County, Florida. Residential & commercial painting, interior & exterior painting, cabinet refinishing, and pressure washing. Free estimates, licensed & insured.";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Professional Painting Services in <span class="text-primary">Pasco County</span>
+          </h1>
+          <p class="hero-subtitle">
+            Transform your home with expert painting services. Residential and commercial painting, 
+            interior and exterior painting, cabinet refinishing, and pressure washing throughout Pasco County, Florida.
+          </p>
+          <div class="hero-features">
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Licensed & Insured</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Free Estimates</span>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">✓</span>
+              <span>Quality Guaranteed</span>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a href="/contact" class="btn btn-primary btn-lg">Get Your Free Quote</a>
+            <a href="tel:+1-727-555-0123" class="btn btn-outline btn-lg">Call (727) 555-0123</a>
+          </div>
+        </div>
+        <div class="hero-form">
+          <div class="quote-form">
+            <h3>Get Your Free Estimate</h3>
+            <form action="/submit-quote" method="POST" class="form">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="service" class="form-label">Service Needed *</label>
+                <select id="service" name="service" class="form-select" required>
+                  <option value="">Select a service</option>
+                  <option value="residential-painting">Residential Painting</option>
+                  <option value="commercial-painting">Commercial Painting</option>
+                  <option value="interior-painting">Interior Painting</option>
+                  <option value="exterior-painting">Exterior Painting</option>
+                  <option value="cabinet-refinishing">Cabinet Refinishing</option>
+                  <option value="pressure-washing">Pressure Washing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Project Details</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Get Free Estimate
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2>Our Professional Painting Services</h2>
+        <p class="text-lg text-light">
+          Comprehensive painting solutions for homes and businesses throughout Pasco County
+        </p>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-header">
+            <div class="service-icon">🏠</div>
+            <h3 class="card-title">Residential Painting</h3>
+          </div>
+          <p>
+            Transform your home with professional interior and exterior painting services. 
+            We handle everything from single rooms to complete home makeovers.
+          </p>
+          <ul class="service-features">
+            <li>Interior & Exterior Painting</li>
+            <li>Color Consultation</li>
+            <li>Surface Preparation</li>
+            <li>Quality Finishes</li>
+          </ul>
+          <a href="/services/residential-painting" class="btn btn-outline">Learn More</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="service-icon">🏢</div>
+            <h3 class="card-title">Commercial Painting</h3>
+          </div>
+          <p>
+            Professional commercial painting services for offices, retail spaces, 
+            warehouses, and other commercial properties throughout Pasco County.
+          </p>
+          <ul class="service-features">
+            <li>Office Buildings</li>
+            <li>Retail Spaces</li>
+            <li>Industrial Facilities</li>
+            <li>Minimal Disruption</li>
+          </ul>
+          <a href="/services/commercial-painting" class="btn btn-outline">Learn More</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="service-icon">🎨</div>
+            <h3 class="card-title">Cabinet Refinishing</h3>
+          </div>
+          <p>
+            Give your kitchen or bathroom cabinets a fresh new look without the cost 
+            of replacement. Professional refinishing and painting services.
+          </p>
+          <ul class="service-features">
+            <li>Kitchen Cabinets</li>
+            <li>Bathroom Vanities</li>
+            <li>Custom Finishes</li>
+            <li>Durable Results</li>
+          </ul>
+          <a href="/services/cabinet-refinishing" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2>Proudly Serving Pasco County</h2>
+        <p class="text-lg text-light">
+          Professional painting services available throughout Pasco County, Florida
+        </p>
+      </div>
+      
+      <div class="areas-grid">
+        <div class="area-card">
+          <h3>New Port Richey</h3>
+          <p>Professional painting services in New Port Richey and surrounding areas</p>
+          <a href="/areas/new-port-richey" class="area-link">New Port Richey Painting</a>
+        </div>
+        
+        <div class="area-card">
+          <h3>Wesley Chapel</h3>
+          <p>Expert painting contractors serving Wesley Chapel homes and businesses</p>
+          <a href="/areas/wesley-chapel" class="area-link">Wesley Chapel Painting</a>
+        </div>
+        
+        <div class="area-card">
+          <h3>Zephyrhills</h3>
+          <p>Quality painting services for Zephyrhills residential and commercial properties</p>
+          <a href="/areas/zephyrhills" class="area-link">Zephyrhills Painting</a>
+        </div>
+        
+        <div class="area-card">
+          <h3>Land O' Lakes</h3>
+          <p>Professional painters serving Land O' Lakes and nearby communities</p>
+          <a href="/areas/land-o-lakes" class="area-link">Land O' Lakes Painting</a>
+        </div>
+        
+        <div class="area-card">
+          <h3>Dade City</h3>
+          <p>Reliable painting services in Dade City and surrounding areas</p>
+          <a href="/areas/dade-city" class="area-link">Dade City Painting</a>
+        </div>
+        
+        <div class="area-card">
+          <h3>All Pasco County</h3>
+          <p>Comprehensive painting services throughout Pasco County, Florida</p>
+          <a href="/areas" class="area-link">View All Service Areas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section bg-primary text-white">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2>What Our Customers Say</h2>
+        <p class="text-lg">
+          Don't just take our word for it - hear from our satisfied customers throughout Pasco County
+        </p>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>
+              "Pasco Painters did an amazing job on our home exterior. Professional, 
+              clean, and the quality is outstanding. Highly recommend!"
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <span>New Port Richey, FL</span>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>
+              "They transformed our kitchen cabinets completely. The refinishing work 
+              is beautiful and saved us thousands compared to replacement."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Mike Rodriguez</h4>
+              <span>Wesley Chapel, FL</span>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>
+              "Excellent commercial painting service for our office building. 
+              Minimal disruption and professional results. Will use again!"
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-info">
+              <h4>Jennifer Davis</h4>
+              <span>Zephyrhills, FL</span>
+            </div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-secondary text-white">
+    <div class="container">
+      <div class="text-center">
+        <h2>Ready to Transform Your Space?</h2>
+        <p class="text-lg mb-xl">
+          Get your free estimate today and see why Pasco Painters is the trusted choice 
+          for painting services throughout Pasco County, Florida.
+        </p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">Get Free Quote</a>
+          <a href="tel:+1-727-555-0123" class="btn btn-outline btn-lg">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    overflow: hidden;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 64, 175, 0.8);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .feature-icon {
+    color: var(--secondary);
+    font-weight: bold;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .hero-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-form h3 {
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Services Section */
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .service-features li {
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .service-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  
+  /* Areas Section */
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .area-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .area-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .area-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .area-card p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+  
+  .area-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .area-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Testimonials Section */
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+  }
+  
+  .testimonial-content {
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial-content p {
+    font-style: italic;
+    line-height: 1.6;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .author-info h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .author-info span {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+  
+  .stars {
+    color: var(--secondary);
+    font-size: 1.1rem;
+  }
+  
+  /* CTA Section */
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .hero-cta {
+      flex-direction: column;
+    }
+    
+    .areas-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

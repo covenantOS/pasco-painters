@@ -1,0 +1,512 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = "Contact Pasco Painters - Get Your Free Quote | Pasco County, FL";
+const description = "Contact Pasco Painters for professional painting services in Pasco County, Florida. Get your free estimate today. Call (727) 555-0123 or fill out our contact form.";
+---
+
+<MainLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="text-center">
+        <h1>Contact Pasco Painters</h1>
+        <p class="hero-subtitle">
+          Get your free estimate for professional painting services in Pasco County, Florida
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h2>Get In Touch</h2>
+          <p class="contact-intro">
+            Ready to transform your space? Contact us today for a free estimate on your painting project. 
+            We serve all of Pasco County with professional painting services.
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-icon">📞</div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <a href="tel:+1-727-555-0123" class="contact-link">(727) 555-0123</a>
+                <p>Call us for immediate assistance</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">📧</div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a href="mailto:info@pascopainters.com" class="contact-link">info@pascopainters.com</a>
+                <p>Send us a message anytime</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">📍</div>
+              <div class="contact-details">
+                <h3>Office Location</h3>
+                <address>
+                  1234 Main Street<br>
+                  New Port Richey, FL 34652
+                </address>
+                <p>Serving all of Pasco County</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">🕒</div>
+              <div class="contact-details">
+                <h3>Business Hours</h3>
+                <div class="hours">
+                  <div class="hour-row">
+                    <span>Monday - Friday:</span>
+                    <span>8:00 AM - 6:00 PM</span>
+                  </div>
+                  <div class="hour-row">
+                    <span>Saturday:</span>
+                    <span>8:00 AM - 4:00 PM</span>
+                  </div>
+                  <div class="hour-row">
+                    <span>Sunday:</span>
+                    <span>Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="trust-badges">
+            <div class="badge">
+              <span class="badge-icon">✓</span>
+              <span>Licensed & Insured</span>
+            </div>
+            <div class="badge">
+              <span class="badge-icon">✓</span>
+              <span>Free Estimates</span>
+            </div>
+            <div class="badge">
+              <span class="badge-icon">✓</span>
+              <span>Quality Guaranteed</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <div class="contact-form">
+            <h2>Get Your Free Estimate</h2>
+            <p>Fill out the form below and we'll get back to you within 24 hours with a free estimate.</p>
+            
+            <form action="/submit-contact" method="POST" class="form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" class="form-input" required>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-input">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="address" class="form-label">Property Address</label>
+                <input type="text" id="address" name="address" class="form-input" placeholder="Street address, city, zip">
+              </div>
+              
+              <div class="form-group">
+                <label for="service" class="form-label">Service Needed *</label>
+                <select id="service" name="service" class="form-select" required>
+                  <option value="">Select a service</option>
+                  <option value="residential-painting">Residential Painting</option>
+                  <option value="commercial-painting">Commercial Painting</option>
+                  <option value="interior-painting">Interior Painting</option>
+                  <option value="exterior-painting">Exterior Painting</option>
+                  <option value="cabinet-refinishing">Cabinet Refinishing</option>
+                  <option value="pressure-washing">Pressure Washing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="timeline" class="form-label">Preferred Timeline</label>
+                <select id="timeline" name="timeline" class="form-select">
+                  <option value="">Select timeline</option>
+                  <option value="asap">As soon as possible</option>
+                  <option value="1-2-weeks">1-2 weeks</option>
+                  <option value="1-month">1 month</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message" class="form-label">Project Details *</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project, including room sizes, colors, and any specific requirements..." required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="newsletter" value="yes">
+                  <span class="checkmark"></span>
+                  I'd like to receive updates and special offers (optional)
+                </label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Send Message & Get Free Estimate
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2>Service Area</h2>
+        <p class="text-lg text-light">
+          We proudly serve all of Pasco County, Florida and surrounding areas
+        </p>
+      </div>
+      
+      <div class="map-container">
+        <div class="map">
+          <!-- Google Maps Embed -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112345.67890123456!2d-82.7195!3d28.2442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2b782b3b9d1d1%3A0x1234567890abcdef!2sPasco%20County%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890123"
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        
+        <div class="service-areas">
+          <h3>Major Service Areas</h3>
+          <ul class="areas-list">
+            <li><a href="/areas/new-port-richey">New Port Richey</a></li>
+            <li><a href="/areas/wesley-chapel">Wesley Chapel</a></li>
+            <li><a href="/areas/zephyrhills">Zephyrhills</a></li>
+            <li><a href="/areas/land-o-lakes">Land O' Lakes</a></li>
+            <li><a href="/areas/dade-city">Dade City</a></li>
+            <li><a href="/areas/port-richey">Port Richey</a></li>
+            <li><a href="/areas/holiday">Holiday</a></li>
+            <li><a href="/areas/trinity">Trinity</a></li>
+            <li><a href="/areas/odessa">Odessa</a></li>
+            <li><a href="/areas/lutz">Lutz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2>Frequently Asked Questions</h2>
+        <p class="text-lg text-light">
+          Common questions about our painting services
+        </p>
+      </div>
+      
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>How quickly can you start my project?</h3>
+          <p>We typically can start most projects within 1-2 weeks of receiving your approval. For urgent projects, we may be able to accommodate earlier start dates.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Do you provide free estimates?</h3>
+          <p>Yes! We provide free, no-obligation estimates for all painting projects. Our estimates include detailed pricing and project timeline.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Are you licensed and insured?</h3>
+          <p>Absolutely. We are fully licensed and insured to protect both our team and your property during the painting process.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>What areas do you serve?</h3>
+          <p>We serve all of Pasco County, Florida including New Port Richey, Wesley Chapel, Zephyrhills, Land O' Lakes, Dade City, and surrounding areas.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Do you offer warranties?</h3>
+          <p>Yes, we offer warranties on all our work. We stand behind the quality of our painting services and materials.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Can you help with color selection?</h3>
+          <p>Absolutely! We offer color consultation services to help you choose the perfect colors for your space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Contact Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  /* Contact Information */
+  .contact-info h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .contact-intro {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+  
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-method {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .contact-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+  
+  .contact-details h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .contact-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-details p {
+    color: var(--text-light);
+    margin: 0.5rem 0 0 0;
+  }
+  
+  .hours {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .hour-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .trust-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .badge-icon {
+    color: var(--accent);
+    font-weight: bold;
+  }
+  
+  /* Contact Form */
+  .contact-form-container {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+  }
+  
+  .contact-form h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-form > p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    margin-top: 0.25rem;
+  }
+  
+  /* Map Section */
+  .map-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  
+  .map {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .service-areas {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+  }
+  
+  .service-areas h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .areas-list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .areas-list a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .areas-list a:hover {
+    text-decoration: underline;
+  }
+  
+  /* FAQ Section */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+  
+  .faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+  }
+  
+  .faq-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+  
+  .faq-item p {
+    color: var(--text-light);
+    margin: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+    
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .map-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
